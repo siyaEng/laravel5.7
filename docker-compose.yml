@@ -1,0 +1,13 @@
+version: '3'
+services:
+  laravel5.7-learn:
+    container_name: laravel5.7-learn
+    build: docker
+    volumes:
+      - $HOME:/root/.ssh
+      - ./:/data/app/project/
+    environment:
+      TZ: Asia/Shanghai
+    command: bash -c "/home/root/run.sh"
+    ports:
+      - "8888:80"
